@@ -1,4 +1,3 @@
-from django.http.response import HttpResponse
 from django.shortcuts import render
 
 
@@ -9,5 +8,5 @@ def home(request):
     return render(request, 'generator/home.html', {'password': 'd19fhewahf8'})
 
 
-def eggs(request):
-    return HttpResponse('Eggs are so tasty')
+def password(request):
+    return render(request, 'generator/password.html', {'password': 'd19fhewahf8'})
