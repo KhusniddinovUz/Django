@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500&display=swap');
       * {
@@ -10,13 +11,11 @@
       }
       div {
         font-size: 40px;
+        padding: 0 20px;
       }
-      .password {
-        display: inline-block;
-        font-weight: 500;
+      .auth {
         background-color: lightgreen;
-        margin-top: 20px;
-        padding: 10px 20px;
+        margin-top: 100px;
       }
       a {
         display: inline-block;
@@ -31,14 +30,11 @@
         transform: translate(1px, 2px);
       }
     </style>
-    <title>Password</title>
+    <title>About</title>
   </head>
   <body>
-    <div>
-      Your password is <br />
-      <div class="password">{{ password }}</div>
-    </div>
-    <a href="{% url 'home' %}">Home</a>
-    <a href="{% url 'about' %}">About</a>
+    <div>This is Django Project that simply generates password</div>
+    <div class="auth">KhusniddinovUz:)</div>
+    <a href="{% url 'home' %}">Go Back</a>
   </body>
 </html>
