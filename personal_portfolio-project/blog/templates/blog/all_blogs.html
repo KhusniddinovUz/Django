@@ -7,11 +7,12 @@
   </head>
   <body>
     <h1>Hello Blogs</h1>
+    <h2>KhusniddinovUz has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h2>
     {% for blog in blogs %}
 
     <a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
-    <p>{{ blog.date }}</p>
-    <p>{{ blog.description }}</p>
+    <p>{{ blog.date|date:'M d Y' }}</p>
+    <p>{{ blog.description|striptags|truncatechars:100 }}</p>
 
     {% endfor %}
   </body>
