@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog</title>
-  </head>
-  <body>
-    <h1>Hello Blogs</h1>
-    <h2>KhusniddinovUz has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h2>
-    {% for blog in blogs %}
+{% extends 'portfolio/base.html' %} {% block content %}
 
-    <a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
-    <p>{{ blog.date|date:'M d Y' }}</p>
-    <p>{{ blog.description|striptags|truncatechars:100 }}</p>
+<h1>Hello Blogs</h1>
+<h2>
+  KhusniddinovUz has written {{ blogs.count }} blog {{ blogs.count|pluralize }}
+</h2>
+{% for blog in blogs %}
 
-    {% endfor %}
-  </body>
-</html>
+<a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title }}</h2></a>
+<p>{{ blog.date|date:'M d Y' }}</p>
+<p>{{ blog.description|striptags|truncatechars:100 }}</p>
+
+{% endfor %} {% endblock %}
