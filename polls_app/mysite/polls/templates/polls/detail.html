@@ -17,6 +17,14 @@
       * {
         font-family: 'Lato';
       }
+      input[type='submit'] {
+        color: rgb(255, 255, 255);
+        padding: 7px 12px;
+        border-radius: 3px;
+        background: green;
+        border: none;
+        outline: none;
+      }
     </style>
     <title>Question</title>
   </head>
@@ -44,7 +52,10 @@
         >
       </div>
       {% endfor %}
-      <input class="submit mt-2" type="submit" value="Vote" />
+      <div class="mt-2 d-flex align-items-center">
+        <a class="btn mr-3 btn-primary" href="{% url 'polls:index' %}">Home</a>
+        <input type="submit" value="Vote" />
+      </div>
     </form>
 
     <script
