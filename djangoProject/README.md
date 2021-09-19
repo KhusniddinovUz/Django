@@ -1,0 +1,1 @@
+Django project to upload images via Rest API
